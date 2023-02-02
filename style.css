@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+:root {
+  --primary-color: hsl(25, 97%, 53%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-grey: hsl(217, 12%, 63%);
+  --color-medium-grey: hsl(216, 12%, 54%);
+  --color-dark-blue: hsl(213, 19%, 18%);
+  --color-button-bg: hsl(213, 19%, 22%);
+  --color-very-dark-blue: hsl(216, 12%, 8%);
+  --primary-font: "Overpass", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: 0.9375rem;
+  background-color: var(--color-very-dark-blue);
+  color: var(--color-light-grey);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+  font-family: var(--primary-font);
+  font-size: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 85%;
+  max-width: 400px;
+  background-color: var(--color-dark-blue);
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.card__star-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.card__title {
+  color: var(--color-white);
+  margin-top: 2rem;
+}
+
+.card__text {
+  margin-top: 0.5rem;
+}
+
+/* .card__star-background {
+  display: flex;
+  background: var(--color-button-bg);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+} */
+
+.card__rating-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.circle {
+  background-color: var(--color-button-bg);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__rating-btn {
+  color: var(--color-light-grey);
+}
+
+.card__submit {
+  width: 100%;
+  color: var(--color-white);
+  background-color: var(--primary-color);
+  padding: 0.5em 0;
+  border-radius: 100px;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
