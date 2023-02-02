@@ -4,9 +4,8 @@
   --primary-color: hsl(25, 97%, 53%);
   --color-white: hsl(0, 0%, 100%);
   --color-light-grey: hsl(217, 12%, 63%);
-  --color-medium-grey: hsl(216, 12%, 54%);
+  --color-medium-grey: hsl(216, 12%, 30%);
   --color-dark-blue: hsl(213, 19%, 18%);
-  --color-button-bg: hsl(213, 19%, 22%);
   --color-very-dark-blue: hsl(216, 12%, 8%);
   --primary-font: "Overpass", sans-serif;
 }
@@ -27,9 +26,20 @@ body {
 button {
   border: none;
   background-color: transparent;
-  display: inline-block;
   font-family: var(--primary-font);
   font-size: inherit;
+}
+
+input {
+  border: none;
+}
+
+input[type="radio"][name="rating"] {
+  display: none;
+}
+
+input[type="radio"][name="rating"]:checked + label {
+  background-color: var(--primary-color);
 }
 
 img {
@@ -52,11 +62,6 @@ img {
   border-radius: 10px;
 }
 
-.card__star-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
 .card__title {
   color: var(--color-white);
   margin-top: 2rem;
@@ -66,16 +71,6 @@ img {
   margin-top: 0.5rem;
 }
 
-/* .card__star-background {
-  display: flex;
-  background: var(--color-button-bg);
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-} */
-
 .card__rating-buttons {
   display: flex;
   justify-content: space-between;
@@ -83,7 +78,7 @@ img {
 }
 
 .circle {
-  background-color: var(--color-button-bg);
+  background-color: var(--color-medium-grey);
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -96,6 +91,17 @@ img {
   color: var(--color-light-grey);
 }
 
+.card__rating-btn:hover {
+  background-color: var(--color-light-grey);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.card__rating-btn--selected {
+  background-color: var(--primary-color);
+  color: var(--color-white);
+}
+
 .card__submit {
   width: 100%;
   color: var(--color-white);
@@ -104,4 +110,9 @@ img {
   border-radius: 100px;
   margin-top: 2rem;
   text-transform: uppercase;
+}
+
+.card__submit:hover {
+  background-color: var(--color-white);
+  color: var(--primary-color);
 }
