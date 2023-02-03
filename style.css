@@ -47,11 +47,21 @@ img {
   display: block;
 }
 
+.align-text-center {
+  text-align: center;
+}
+
 .container {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Display initial card state */
+.card__content-start {
+  display: block;
 }
 
 .card {
@@ -115,4 +125,46 @@ img {
 .card__submit:hover {
   background-color: var(--color-white);
   color: var(--primary-color);
+}
+
+/* CARD FINISH STATE RULES */
+
+.card__content-finish {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__content-finish--image {
+  width: 60%;
+  margin-top: 1rem;
+}
+
+.card__rating-selection {
+  color: var(--primary-color);
+  background-color: var(--color-medium-grey);
+  padding: 0.27em 1em 0.25em;
+  border-radius: 30px;
+  margin-top: 2.5rem;
+}
+
+.reset {
+  background-color: var(--color-medium-grey);
+  color: var(--color-light-grey);
+  margin-top: 2rem;
+  padding: 0.5em 3em;
+  border-radius: 100px;
+}
+
+.reset:hover,
+.reset:focus {
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.reset:active {
+  background-color: var(--color-light-grey);
+  color: var(--color-white);
+  cursor: pointer;
 }
