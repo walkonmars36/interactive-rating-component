@@ -10,17 +10,29 @@
   --primary-font: "Overpass", sans-serif;
 }
 
-* {
+html {
+  font-size: 15px;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
+  min-height: 100vh;
   font-family: var(--primary-font);
-  font-size: 0.9375rem;
   background-color: var(--color-very-dark-blue);
   color: var(--color-light-grey);
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -28,6 +40,10 @@ button {
   background-color: transparent;
   font-family: var(--primary-font);
   font-size: inherit;
+}
+
+fieldset {
+  border: none;
 }
 
 input {
@@ -40,6 +56,7 @@ input[type="radio"][name="rating"] {
 
 input[type="radio"][name="rating"]:checked + label {
   background-color: var(--primary-color);
+  color: var(--color-white);
 }
 
 img {
@@ -51,25 +68,22 @@ img {
   text-align: center;
 }
 
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Display initial card state */
 .card__content-start {
   display: block;
 }
 
 .card {
-  width: 85%;
-  max-width: 400px;
+  width: 90%;
+  max-width: 27rem;
   background-color: var(--color-dark-blue);
-  padding: 2em;
+  margin: auto;
+  padding: 2.2em;
   border-radius: 10px;
+}
+
+.card__star-icon {
+  margin: 0 0 0.1rem 0.1rem;
 }
 
 .card__title {
@@ -89,16 +103,17 @@ img {
 
 .circle {
   background-color: var(--color-medium-grey);
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.8rem;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-content: center;
 }
 
 .card__rating-btn {
   color: var(--color-light-grey);
+  line-height: 1;
+  margin-top: 0.2rem;
 }
 
 .card__rating-btn:hover {
@@ -116,10 +131,12 @@ img {
   width: 100%;
   color: var(--color-white);
   background-color: var(--primary-color);
-  padding: 0.5em 0;
-  border-radius: 100px;
+  padding: 1em 0 0.8em;
+  border-radius: 6.7rem;
   margin-top: 2rem;
   text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
 }
 
 .card__submit:hover {
@@ -127,7 +144,13 @@ img {
   color: var(--primary-color);
 }
 
-/* CARD FINISH STATE RULES */
+.error-message {
+  display: none;
+  margin-top: 0.5rem;
+  color: red;
+}
+
+/* CARD FINISH STATE  */
 
 .card__content-finish {
   display: none;
@@ -143,9 +166,10 @@ img {
 .card__rating-selection {
   color: var(--primary-color);
   background-color: var(--color-medium-grey);
-  padding: 0.27em 1em 0.25em;
+  padding: 0.7em 1.2em 0.5em;
   border-radius: 30px;
   margin-top: 2.5rem;
+  line-height: 1;
 }
 
 .reset {
