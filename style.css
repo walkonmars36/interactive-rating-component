@@ -4,8 +4,9 @@
   --primary-color: hsl(25, 97%, 53%);
   --color-white: hsl(0, 0%, 100%);
   --color-light-grey: hsl(217, 12%, 63%);
-  --color-medium-grey: hsl(216, 12%, 30%);
-  --color-dark-blue: hsl(213, 19%, 18%);
+  --color-medium-grey: hsl(216, 12%, 54%);
+  --color-mid-blue: hsl(213, 19%, 18%);
+  --color-dark-blue: hsl(218, 22%, 14%);
   --color-very-dark-blue: hsl(216, 12%, 8%);
   --primary-font: "Overpass", sans-serif;
 }
@@ -33,6 +34,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
+
+h2 {
+  line-height: 1;
 }
 
 button {
@@ -64,13 +70,45 @@ img {
   display: block;
 }
 
-.align-text-center {
-  text-align: center;
+a {
+  color: var(--color-light-grey);
+}
+
+a:hover {
+  color: var(--color-white);
+}
+
+.btn {
+  color: var(--color-white);
+  background-color: var(--primary-color);
+  border-radius: 6.7rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-white);
+  color: var(--primary-color);
+}
+
+.circle {
+  background-color: var(--color-mid-blue);
+  width: 2.9rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Display initial card state */
-.card__content-start {
-  display: block;
+.card__start {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
 }
 
 .card {
@@ -78,117 +116,96 @@ img {
   max-width: 27rem;
   background-color: var(--color-dark-blue);
   margin: auto;
-  padding: 2.2em;
+  padding: 2em 1.5em 2.2em;
   border-radius: 10px;
 }
 
 .card__star-icon {
-  margin: 0 0 0.1rem 0.1rem;
+  margin-bottom: 0.1rem;
 }
 
 .card__title {
   color: var(--color-white);
-  margin-top: 2rem;
-}
-
-.card__text {
-  margin-top: 0.5rem;
 }
 
 .card__rating-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
 }
 
-.circle {
-  background-color: var(--color-medium-grey);
-  width: 2.8rem;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  display: grid;
-  place-content: center;
-}
-
-.card__rating-btn {
+.card__rating-number {
   color: var(--color-light-grey);
   line-height: 1;
-  margin-top: 0.2rem;
+  padding: 0.7em 1.2em 0.5em;
 }
 
-.card__rating-btn:hover {
+.card__rating-number:hover {
   background-color: var(--color-light-grey);
   color: var(--color-white);
   cursor: pointer;
 }
 
-.card__rating-btn--selected {
+.card__rating-number--selected {
   background-color: var(--primary-color);
   color: var(--color-white);
 }
 
-.card__submit {
+.card__btn-submit {
   width: 100%;
-  color: var(--color-white);
-  background-color: var(--primary-color);
   padding: 1em 0 0.8em;
-  border-radius: 6.7rem;
-  margin-top: 2rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-weight: 700;
+  margin-top: 1.5rem;
 }
 
-.card__submit:hover {
-  background-color: var(--color-white);
-  color: var(--primary-color);
+.submit-btn {
+  position: relative;
 }
 
 .error-message {
   display: none;
-  margin-top: 0.5rem;
-  color: red;
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  color: var(--primary-color);
 }
 
 /* CARD FINISH STATE  */
 
-.card__content-finish {
+.card__finish {
   display: none;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  gap: 1.6rem;
 }
 
-.card__content-finish--image {
-  width: 60%;
-  margin-top: 1rem;
+.card__finish-image {
+  width: 50%;
 }
 
 .card__rating-selection {
   color: var(--primary-color);
-  background-color: var(--color-medium-grey);
+  background-color: var(--color-mid-blue);
   padding: 0.7em 1.2em 0.5em;
   border-radius: 30px;
-  margin-top: 2.5rem;
   line-height: 1;
+  margin-top: 0.5rem;
 }
 
-.reset {
-  background-color: var(--color-medium-grey);
-  color: var(--color-light-grey);
+.card__title-thanks {
+  margin-top: 0.5rem;
+}
+
+.card__text-thanks {
+  text-align: center;
+}
+
+.attribution {
   margin-top: 2rem;
-  padding: 0.5em 3em;
-  border-radius: 100px;
 }
 
-.reset:hover,
-.reset:focus {
-  background-color: var(--primary-color);
-  color: var(--color-white);
-  cursor: pointer;
-}
-
-.reset:active {
-  background-color: var(--color-light-grey);
-  color: var(--color-white);
-  cursor: pointer;
+.card__reset-btn {
+  visibility: hidden;
+  font-size: 0.8rem;
+  padding: 0.5em 1em 0.3em;
+  margin: 0 5% 1rem auto;
+  display: block;
 }
