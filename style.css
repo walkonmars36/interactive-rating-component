@@ -163,7 +163,7 @@ a:hover {
 .error-message {
   display: none;
   position: absolute;
-  top: 15%;
+  top: 10%;
   left: 2%;
   color: var(--primary-color);
 }
