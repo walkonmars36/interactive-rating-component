@@ -1,0 +1,25 @@
+.btn {
+  color: var(--color-white);
+  background-color: var(--primary-color);
+  border-radius: 6.7rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-white);
+  color: var(--primary-color);
+}
+
+.circle {
+  background-color: var(--color-mid-blue);
+  width: 2.9rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
