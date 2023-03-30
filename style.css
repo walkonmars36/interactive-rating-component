@@ -156,11 +156,11 @@ a:hover {
   margin-top: 1.5rem;
 }
 
-.submit-btn {
+.card__submit-btn-container {
   position: relative;
 }
 
-.error-message {
+.card__error-message {
   display: none;
   position: absolute;
   top: 10%;

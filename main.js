@@ -1,20 +1,25 @@
-const form = document.getElementById("rating-form");
+const form = document.getElementById("card__rating-form");
 const ratings = document.querySelectorAll('input[name="rating"]');
 const ratingNumber = document.querySelector(".card__rating-selection-number");
 const initialCardState = document.querySelector(".card__start");
 const finishCardState = document.querySelector(".card__finish");
-const errorMessage = document.querySelector(".error-message");
+const errorMessage = document.querySelector(".card__error-message");
 const submitBtn = document.querySelector("[type='submit']");
 const resetBtn = document.querySelector(".card__reset-btn");
 
 //////////// FUNCTIONS //////////////
 
+// display finish card state
 const displayFinishCardState = function () {
   initialCardState.style.display = "none";
+  initialCardState.setAttribute("aria-hidden", "true");
   finishCardState.style.display = "flex";
+  finishCardState.setAttribute("aria-hidden", "false");
   resetBtn.style.visibility = "visible";
+  resetBtn.setAttribute("aria-hidden", "false");
 };
 
+// get rating value
 const getRatingValue = function () {
   let checkedRating = null;
   ratings.forEach((rating) => {
@@ -32,47 +37,57 @@ const getRatingValue = function () {
     submitBtn.ariaDisabled = true;
     submitBtn.disabled = true;
     submitBtn.style.cursor = "not-allowed";
-    displayErrorMessage("Please select a rating");
+    displayErrorMessage();
   }
 };
 
+// hide error message
 const hideErrorMessage = function () {
-  // update aria hidden to true
   errorMessage.style.display = "none";
   submitBtn.style.opacity = 1;
   submitBtn.ariaDisabled = false;
   submitBtn.disabled = false;
   submitBtn.style.cursor = "pointer";
+  errorMessage.setAttribute("aria-hidden", "true");
 };
 
-const displayErrorMessage = function (message) {
-  // update aria hidden to false
-
-  errorMessage.textContent = message;
+// display error message
+const displayErrorMessage = function () {
   errorMessage.style.display = "block";
+  errorMessage.setAttribute("aria-hidden", "false");
 };
 
+// reset form
 const resetForm = function () {
   ratings.forEach((rating) => {
     rating.checked = false;
   });
 
   initialCardState.style.display = "flex";
+  initialCardState.setAttribute("aria-hidden", "false");
+  finishCardState.setAttribute("aria-hidden", "true");
   finishCardState.style.display = "none";
+  resetBtn.setAttribute("aria-hidden", "true");
   resetBtn.style.visibility = "hidden";
+};
+
+// handle submit
+const handleSubmit = function (e) {
+  e.preventDefault();
+  getRatingValue();
+};
+
+// handle rating click
+const handleRatingClick = function () {
+  hideErrorMessage();
 };
 
 //////////// EVENT LISTENERS //////////////
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  getRatingValue();
-});
+form.addEventListener("submit", handleSubmit);
 
 ratings.forEach((rating) => {
-  rating.addEventListener("click", function () {
-    hideErrorMessage();
-  });
+  rating.addEventListener("click", handleRatingClick);
 });
 
 resetBtn.addEventListener("click", resetForm);

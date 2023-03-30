@@ -19,7 +19,7 @@
     <!-- Rating state start -->
 
     <main class="container">
-      <button class="btn card__reset-btn">Reset</button>
+      <button class="btn card__reset-btn" aria-hidden="true">Reset</button>
       <div class="card">
         <div class="card__start">
           <div class="circle">
@@ -36,7 +36,7 @@
           </p>
 
           <!-- Form -->
-          <form id="rating-form">
+          <form id="card__rating-form">
             <fieldset class="card__rating-buttons">
               <div>
                 <input type="radio" name="rating" value="1" id="1" />
@@ -60,8 +60,10 @@
               </div>
             </fieldset>
 
-            <div class="submit-btn">
-              <small class="error-message">Error Message</small>
+            <div class="card__submit-btn-container">
+              <small class="card__error-message" aria-hidden="true"
+                >Please select a rating</small
+              >
               <button type="submit" class="btn card__btn-submit">Submit</button>
             </div>
           </form>
@@ -70,7 +72,7 @@
         </div>
 
         <!-- Thank you state start -->
-        <div class="card__finish">
+        <div class="card__finish" aria-hidden="true">
           <img
             class="card__finish-image"
             src="./images/illustration-thank-you.svg"
