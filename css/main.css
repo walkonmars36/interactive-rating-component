@@ -107,13 +107,6 @@ a:hover {
   align-items: center;
 }
 
-/* Display initial card state */
-.card__start {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
 .card {
   width: 90%;
   max-width: 27rem;
@@ -121,48 +114,41 @@ a:hover {
   margin: auto;
   padding: 2em 1.5em 2.2em;
   border-radius: 10px;
+  /* Display initial card state */
+  /* CARD FINISH STATE  */
 }
-
+.card__start {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
 .card__star-icon {
   margin-bottom: 0.1rem;
 }
-
 .card__title {
   color: var(--color-white);
 }
-
 .card__rating-buttons {
   display: flex;
   justify-content: space-between;
 }
-
 .card__rating-number {
   color: var(--color-light-grey);
   line-height: 1;
   padding: 0.7em 1.2em 0.5em;
 }
-
 .card__rating-number:hover {
   background-color: var(--color-light-grey);
   color: var(--color-white);
   cursor: pointer;
 }
-
 .card__rating-number--selected {
   background-color: var(--primary-color);
   color: var(--color-white);
 }
-
-.card__btn-submit {
-  width: 100%;
-  padding: 1em 0 0.8em;
-  margin-top: 1.5rem;
-}
-
 .card__submit-btn-container {
   position: relative;
 }
-
 .card__error-message {
   display: none;
   position: absolute;
@@ -170,19 +156,20 @@ a:hover {
   left: 2%;
   color: var(--primary-color);
 }
-
-/* CARD FINISH STATE  */
+.card__btn-submit {
+  width: 100%;
+  padding: 1em 0 0.8em;
+  margin-top: 1.5rem;
+}
 .card__finish {
   display: none;
   align-items: center;
   flex-direction: column;
   gap: 1.6rem;
 }
-
 .card__finish-image {
   width: 50%;
 }
-
 .card__rating-selection {
   color: var(--primary-color);
   background-color: var(--color-mid-blue);
@@ -191,15 +178,12 @@ a:hover {
   line-height: 1;
   margin-top: 0.5rem;
 }
-
 .card__title-thanks {
   margin-top: 0.5rem;
 }
-
 .card__text-thanks {
   text-align: center;
 }
-
 .card__reset-btn {
   visibility: hidden;
   font-size: 0.8rem;
