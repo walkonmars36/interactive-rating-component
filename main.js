@@ -12,9 +12,7 @@ const resetBtn = document.querySelector(".card__reset-btn");
 // display finish card state
 const displayFinishCardState = function () {
   initialCardState.style.display = "none";
-  initialCardState.setAttribute("aria-hidden", "true");
   finishCardState.style.display = "flex";
-  finishCardState.setAttribute("aria-hidden", "false");
   resetBtn.style.visibility = "visible";
   resetBtn.setAttribute("aria-hidden", "false");
 };
@@ -48,13 +46,11 @@ const hideErrorMessage = function () {
   submitBtn.ariaDisabled = false;
   submitBtn.disabled = false;
   submitBtn.style.cursor = "pointer";
-  errorMessage.setAttribute("aria-hidden", "true");
 };
 
 // display error message
 const displayErrorMessage = function () {
   errorMessage.style.display = "block";
-  errorMessage.setAttribute("aria-hidden", "false");
 };
 
 // reset form
@@ -64,8 +60,6 @@ const resetForm = function () {
   });
 
   initialCardState.style.display = "flex";
-  initialCardState.setAttribute("aria-hidden", "false");
-  finishCardState.setAttribute("aria-hidden", "true");
   finishCardState.style.display = "none";
   resetBtn.setAttribute("aria-hidden", "true");
   resetBtn.style.visibility = "hidden";
