@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Here](https://www.frontendmentor.io/solutions/built-with-flexbox-and-includes-an-error-message-and-reset-feature-tGi1OjcHNC)
 - Live Site URL: [Here](https://interactive-rating-component-wom.netlify.app/)
 
 ## My process
